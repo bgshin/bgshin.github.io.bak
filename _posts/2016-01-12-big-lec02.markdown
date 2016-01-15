@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "BIG Lecture 02"
+date:   2016-01-13 14:30:00 -0500
+categories: cs584R
+---
+
+
+## 
+* [리지리그레션을 알자](http://web.as.uky.edu/statistics/users/pbreheny/764-F11/notes/9-1.pdf)
+	* $$min ||y-xB || $$
+	* $$min ||B||_{2} \leq s $$
+	* circle
+
+* LASSO
+	* $$min ||B||_{1} \leq s $$
+	* diamond shape
+	* [lasso coefficient path](https://www.google.com/search?q=lasso+coefficient+path&newwindow=1&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiw_MzDxqfKAhXBwiYKHWcoASoQ_AUIBygB&biw=1344&bih=720#imgrc=ihO4BDVnlTiTSM%3A)
+	* [읽고이해하자](https://onlinecourses.science.psu.edu/stat857/node/158)

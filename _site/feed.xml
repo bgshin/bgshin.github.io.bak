@@ -1,68 +1,414 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bonggun&#39;s blog</title>
+    <title>My blog</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Jan 2016 00:13:34 -0500</pubDate>
-    <lastBuildDate>Tue, 05 Jan 2016 00:13:34 -0500</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 14 Jan 2016 23:52:20 -0500</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2016 23:52:20 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>OS Lecture 02</title>
+        <description>&lt;h3&gt;Reading&lt;/h3&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h4&gt;HOCA&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;proc_link&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAXPROC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// proc_link: next ptr
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;state_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// all info that OS needs to save
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// OS switches one to another
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// datastructure
+&lt;/span&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qcount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// how many processes on
+&lt;/span&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;semvec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SEMMAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;procTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAXPROC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;span class=&quot;cm&quot;&gt;/*
+proc_free_h
+|
+|  proclink    stat_t    qcount   semvec    TDL
+|   ---------------------------------------------
+-&amp;gt; |          |         |         |        |     |
+|   ---------------------------------------------
+-&amp;gt;|          |         |         |        |     |
+|  ---------------------------------------------
+-&amp;gt;|          |         |         |        |     |
+|  ---------------------------------------------
+-&amp;gt;|          |         |         |        |     |
+|  ---------------------------------------------
+-&amp;gt;|          |         |         |        |     |
+|   ---------------------------------------------
+-&amp;gt; 0
+
+MAXPROC = 5
+evert module has an init routine
+*/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;queues are linked lists with a tail pointer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*
+    ----------
+-&amp;gt; |          |&amp;lt;-
+|   ----------  |
+-&amp;gt;|          |  |
+|  -----------  |
+-&amp;gt;|          |  |
+|  -----------  |
+-&amp;gt;|          |  |
+|  -----------  |
+-&amp;gt;|          |--      tail pointer
+   -----------
+
+*/&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;initProc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;insertProc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proc_link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 헤드 = old_tail-&amp;gt;next
+// old_tail-&amp;gt;next = 새노드
+// 새노드-&amp;gt;next = 헤드
+// tp는 더블 포인터
+// p는 포인터
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;removeProc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proc_link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 헤드 리턴
+// tail-&amp;gt;next = head-&amp;gt;next
+// 없을땐 널 리턴, 하나일땐 tp가 널이됨
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outProc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proc_link&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allocProc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;freeProc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headQueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proc_link&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;// freelist는 스택
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc_link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc_link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/*
+-----------------------
+|     |     |     |     | proc_link
+-----------------------
+|                      | state_t
+-----------------------
+|                      | qcount
+-----------------------
+|                      | semvec
+-----------------------
+
+
+*/&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/images/OSLEC01.a.png&quot; alt=&quot;my photo&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;NEXT&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;edgar sergio Simulators (Tues)&lt;/li&gt;
+&lt;li&gt;semaphore module (thurs)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Mon, 04 Jan 2016 23:40:01 -0500</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2016/01/04/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2016/01/04/welcome-to-jekyll.html</guid>
+        <pubDate>Thu, 14 Jan 2016 14:30:00 -0500</pubDate>
+        <link>/cs580/2016/01/14/os-lec02.html</link>
+        <guid isPermaLink="true">/cs580/2016/01/14/os-lec02.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>cs580</category>
         
       </item>
     
       <item>
-        <title>Test page!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>BIG Lecture 02</title>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://web.as.uky.edu/statistics/users/pbreheny/764-F11/notes/9-1.pdf&quot;&gt;리지리그레션을 알자&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$$min ||y-xB || $$&lt;/li&gt;
+&lt;li&gt;$$min ||B||_{2} \leq s $$&lt;/li&gt;
+&lt;li&gt;circle&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;LASSO&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;$$\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$$min ||B||_{1} \leq s $$&lt;/li&gt;
+&lt;li&gt;diamond shape&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.google.com/search?q=lasso+coefficient+path&amp;amp;newwindow=1&amp;amp;source=lnms&amp;amp;tbm=isch&amp;amp;sa=X&amp;amp;ved=0ahUKEwiw_MzDxqfKAhXBwiYKHWcoASoQ_AUIBygB&amp;amp;biw=1344&amp;amp;bih=720#imgrc=ihO4BDVnlTiTSM%3A&quot;&gt;lasso coefficient path&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://onlinecourses.science.psu.edu/stat857/node/158&quot;&gt;읽고이해하자&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Mon, 04 Jan 2016 23:40:01 -0500</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2016/01/04/test-page.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2016/01/04/test-page.html</guid>
+        <pubDate>Wed, 13 Jan 2016 14:30:00 -0500</pubDate>
+        <link>/cs584r/2016/01/13/big-lec02.html</link>
+        <guid isPermaLink="true">/cs584r/2016/01/13/big-lec02.html</guid>
         
         
-        <category>jekyll</category>
+        <category>cs584R</category>
         
-        <category>update</category>
+      </item>
+    
+      <item>
+        <title>IR Lecture 02</title>
+        <description>&lt;h2&gt;LEC02&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;linear of sum of the length of each one Brutus and Ceasar&lt;/li&gt;
+&lt;li&gt;왜 작은거 부터하는게 유리한지? p.36 AND니까 줄어들어서인듯&lt;/li&gt;
+&lt;li&gt;Brutus: 1 2 4 11 31 45 173 174&lt;/li&gt;
+&lt;li&gt;Caesar: 1 2 4 5 6 16 57 132&lt;/li&gt;
+&lt;li&gt;Brutus AND NOT Caesar
+
+&lt;ul&gt;
+&lt;li&gt;11 31 45 173 174&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Brutus OR NOT Caesar
+
+&lt;ul&gt;
+&lt;li&gt;다큐를 N=|doc|벡터로 표현하고 인버스하면 된다&lt;/li&gt;
+&lt;li&gt;1 2 3 5 7 8 9 10 11 12 13 14 15 17 18 ...&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;다큐먼트 ID를 DS에 넣는 이유는 |vocab|&amp;lt;&amp;lt;|doc|이기 떄문에&lt;/li&gt;
+&lt;li&gt;exercise
+
+&lt;ul&gt;
+&lt;li&gt;k or e = 29,000&lt;/li&gt;
+&lt;li&gt;t o t = 36,000&lt;/li&gt;
+&lt;li&gt;m or s 37,000&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Exercise: If the query is friends AND romans AND (NOT countrymen), how could we use the freq of countrymen?
+
+&lt;ul&gt;
+&lt;li&gt;countrymen would be small so NOT countrymen would be large num&lt;/li&gt;
+&lt;li&gt;starts with min(romans, NOT countrymen) AND friends?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Exercise: Extend the merge to an arbitrary Boolean query. Can we always guarantee execution in time linear in the total postings size?
+
+&lt;ul&gt;
+&lt;li&gt;Yes convert to boolean vector of size |doc| then boolean operation and get inverted index again&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Hint: Begin with the case of a Boolean formula query: in this, each query term appears only once in the query.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 13 Jan 2016 11:30:00 -0500</pubDate>
+        <link>/cs572/2016/01/13/ir-lec02.html</link>
+        <guid isPermaLink="true">/cs572/2016/01/13/ir-lec02.html</guid>
+        
+        
+        <category>cs572</category>
+        
+      </item>
+    
+      <item>
+        <title>OS Lecture 01</title>
+        <description>&lt;h2&gt;logistics&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;공룡 9th edition - 시험은 책에서 &lt;/li&gt;
+&lt;li&gt;Friday, 29th Apr 3PM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;History of OS&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No OS
+
+&lt;ul&gt;
+&lt;li&gt;Each program controls the entire computer&lt;/li&gt;
+&lt;li&gt;Programmer &amp;amp; operatoer same&lt;/li&gt;
+&lt;li&gt;loads program from media&lt;/li&gt;
+&lt;li&gt;process start &lt;/li&gt;
+&lt;li&gt;debug with lights &amp;amp; switches&lt;/li&gt;
+&lt;li&gt;very poor unilization&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;batch monitor&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;small control program loaded into high memory&lt;/li&gt;
+&lt;li&gt;reads in job cards transaction and data&lt;/li&gt;
+&lt;li&gt;jump into loaded code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;        |batch mon|
+        ----------
+        |         |
+c1,cn-&amp;gt;|         | -&amp;gt;printer
+        |         |
+        ----------
+        card &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;op code&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,... , card&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,.., card&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;end of job&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;I/O routines&lt;/li&gt;
+&lt;li&gt;program failure dumps memory&lt;/li&gt;
+&lt;li&gt;increases utilization&lt;/li&gt;
+&lt;li&gt;separates operation from programmer&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;An OS is a program that controls the resources of a computing system for convinience and efficiency&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;problem - peripherals show compared to CPU&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;solution&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;faster peripherals - offline peripherals&lt;/li&gt;
+&lt;li&gt;replace slow peripherals with fast ones that are loaded offline&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;problem - still too slow&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;solution&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;use smart devices with buffering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  |CPU|  |MEM|  |I/O dev|
+    |      |        |
+  ------------------------
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;DMA - direct mem access
+
+&lt;ul&gt;
+&lt;li&gt;IO dev can r/w mem directly&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    |MEM|  |I/O dev|
+      |        |
+  -------------------
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;overlaps computation of I/O&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;problem - CPU still too fast and fills all the buffers &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;solution&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;more buffers - spooling&lt;/li&gt;
+&lt;li&gt;add a fast memory device 
+
+&lt;ul&gt;
+&lt;li&gt;faster than peripherals&lt;/li&gt;
+&lt;li&gt;slower/bigger/cheaper than RAM&lt;/li&gt;
+&lt;li&gt;eg: spooling disk drive&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  |CPU|  |MEM|  |I/O dev|   |spooling dd|
+    |      |                   |
+  -----------------------------------------
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;problem - spooling device fills up&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;solution&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;multiprogramming
+
+&lt;ul&gt;
+&lt;li&gt;keep several programs in mem and switch b/w them&lt;/li&gt;
+&lt;li&gt;when one is wating for I/O another can do computation&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Time sharing&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;* computer with a human doing I/O
+* multiprogramming is essential
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;distributed systems&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;limit to CPU speed
+
+&lt;ul&gt;
+&lt;li&gt;cost gets prohibitive&lt;/li&gt;
+&lt;li&gt;use multiple CPUs
+
+&lt;ul&gt;
+&lt;li&gt;tightly coupled direction
+
+&lt;ul&gt;
+&lt;li&gt;multiple cores&lt;/li&gt;
+&lt;li&gt;multiple chips&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;the other one
+
+&lt;ul&gt;
+&lt;li&gt;multiple computers with a n/w connectino&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Real time OS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;runs on systems and instruments that control h/w 
+
+&lt;ul&gt;
+&lt;li&gt;lab equipment&lt;/li&gt;
+&lt;li&gt;guidance systems&lt;/li&gt;
+&lt;li&gt;appliances, etc&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;OS gives guatantees to system calls&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Batch - 1950 - 1060&amp;#39;s&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Spooling - early 1960&amp;#39;s&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;multiprogramming - multics 1965&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;time sharing - UNIX 1970&amp;#39;s&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PC&amp;#39;s - late 1970s - batch (DOS is screen version of batch)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PC&amp;#39;s spooling - 1980&amp;#39;s (MS-DOS)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PC&amp;#39;s multiprogramming - 1995 (windows 95)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Reading&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HOCA handout&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;NEXT&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;queue module (Thurs)&lt;/li&gt;
+&lt;li&gt;edgar sergio Simulators (Tues)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 12 Jan 2016 14:30:00 -0500</pubDate>
+        <link>/cs580/2016/01/12/os-lec01.html</link>
+        <guid isPermaLink="true">/cs580/2016/01/12/os-lec01.html</guid>
+        
+        
+        <category>cs580</category>
+        
+      </item>
+    
+      <item>
+        <title>Reading notes</title>
+        <description>&lt;h4&gt;2016-01&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;deeplearning-papernotes [&lt;a href=&quot;https://github.com/dennybritz/deeplearning-papernotes/blob/master/README.md&quot;&gt;link&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Korean deeplearning paper notes [&lt;a href=&quot;http://wizardsnote.tumblr.com/archive&quot;&gt;link&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Doc2Vec tutorial [&lt;a href=&quot;https://github.com/linanqiu/word2vec-sentiments/blob/master/word2vec-sentiment.ipynb&quot;&gt;link&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Korean BagofWords, Word2vec, Doc2vec tutorial [&lt;a href=&quot;https://github.com/krikit/word2vec_tutorial/blob/master/doc2vec_tutorial.ipynb&quot;&gt;link&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Ensemble of Generative and Discriminative Techniques for Sentiment Analysis of Movie Reviews, Workshop ICLR 2015, [&lt;a href=&quot;https://github.com/mesnilgr/iclr15&quot;&gt;link&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 07 Jan 2016 13:50:01 -0500</pubDate>
+        <link>/reading/2016/01/07/reading.html</link>
+        <guid isPermaLink="true">/reading/2016/01/07/reading.html</guid>
+        
+        
+        <category>reading</category>
         
       </item>
     
