@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "OS Lecture 06"
+date:   2016-01-28 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## Components of OS
+* Process management
+	* A process is a program in execution 
+		* unit for the OS to associate resources and do scheduling
+	* schedules process so as to store the CPUs
+	* user processes and system processes
+	* services 
+		* create process
+		* kill process
+		* suspend process
+		* IPC
+		* deadlock detection / avoidance
+* Memory management
+	* controls primary memory (RAM)
+	* services
+		* alloc
+		* free
+		* share
+	* secondary mem mngment
+		* swap paging space
+		* on secondary memory
+			* disk drive
+			* flash memory
+		* reserve primary memory for memory currently in use
+* I/O Management
+	* controls I/O devices
+	* provides low level routines that are device specific
+	* deals DMA devices using interrupts
+	* provides I/O protection
+	* I/O scheduling on shared devices
+		* ![](/images/OSLEC06A.png)
+	* I/O cacheing
+* File Management
+	* Logical loger above IO management
+	* directories & heirachy
+	* permissions
+* other subsystems
+	* networking
+	* accounting - 누가 뭘쓰는지
+	* security
+
+	
+* Primary way services are invoked is via syscalls
+	* API between processes and the OS
+	* Every OS needs a well defined syscall API
+* Syscall is implemented with trap instruction
+	* trap N
+* An OS comes with system programs
+	* ex) file management
+		* cp, rm, ln, ls
+	* status info
+		* ps, df, date
+	* modification program 
+		* vi, emacs, gedit
+	* program development
+		* gcc, ld, gdb
+	* user interface
+		* CLI:bash, ksh, zsh, csh
+		* GUI: gnome
+
+### OS structuring
+#### examples
+* DOS(MSDOS)
+	* ![](/images/OSLEC06B.png)
+* UNIX
+	* ![](/images/OSLEC06C.png)
+	* 모노리띡인데 이건 인터럽 드리븐이라 문제생길수있다
+	* deal with interactions b/w components at interrupt time
+	* set priority level (SPL) - 인터럽트의 프라이어리티를 설정 (이레벨 밑으론 안걸리게)
+		* cause deadlocks 
+		* stalls - 인터럽을 오랫동안 없애면 생기는현상
+		* hard to change
+* Mach
+	* ![](/images/OSLEC06D.png)
+	 
+	

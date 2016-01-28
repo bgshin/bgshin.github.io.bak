@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "BIG Lecture 05"
+date:   2016-01-27 14:30:00 -0500
+categories: cs584R
+---
+
+
+## 
+* 라소는 젤첨시도해보기좋음 - 인터프리터빌리티줌
+* 사전지식을 새로운 콘스트레인트로 주는방식 (그룹라소)
+* 어려운문제 분산해서 풀자(ADMM동기)
+* distributted model - n>>d
+	* 소셜넷웍
+	* 무선넷웍
+	* d>>n features
+	* n>>d samples
+* coreference가 데이터가 너무 많음 - 이걸 분산으로 풀면?

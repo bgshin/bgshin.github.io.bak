@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "OS Lecture 05"
+date:   2016-01-26 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## Exception handling
+* Interrupts (HW init) - benign
+* Traps (CPU instruct init)
+	* Errors
+	* trap inst -  implement syscalls
+* vectored exceptions - exception type references exceeption table (EVT)
+* state saved
+* priv mode
+
+
+### examples
+#### buffering
+* user program is running 
+* interrupt occurs
+* device handler is executed
+	* checks the device completion code - take corretive action if necesary
+	* take the buffer off Q
+	* send the device the next buffer address
+	* (interrupt portion)
+* retrun to user
+
+* Trap portion(syscall)
+	* executes syscall handler 
+	* invokes the device handler
+	* adds a buffer to the Q
+	* returns
+
+
+#### timeshare
+* system imploys a RTC, which interrupts every N millisecond
+* some processes that are blocked on an I/O, 
+* other processes are on a RQ(run queue)
+* The exception handler for the clock is called whenever the clock interrupts
+	* the OS saves the states of the process on top of RQ - in a datastructure (in the proc_t)
+	* moves the process to the tail of RQ
+	* loads the states of the new top of RQ into the HW
+
+### HW for protection
+* Memory protection
+	* ![]({{ site.url }}/images/OSLEC05A.png)
+	* isolate processes
+		* prog errors
+		* malicious processes
+	* from each other and the OS
+	* The OS needs to access to all memory
+
+
+	* ![]({{ site.url }}/images/OSLEC05B.png)
+	* ![]({{ site.url }}/images/OSLEC05C.png)
+	
+
+	* When OS allocates an Adreess Space(AS) for a new process it saves UBR/LBR value in proc_t	
+	* when a process is started those values are loaded into the UBR/LBR registers
+	* UBR/LBR이 MMU에 없으면 시스템이 안돈다
+
+	
+* I/O protection
+	* Each process needs constrained I/O 
+		* Keep key strokes private
+		* keep disk files private
+	* Make I/O instructions privledged
+	* Use a syscall to tell the OS what I/O to do
+		* OS checks validity
+
+* CPU protection
+	*  keep a process from monopolizing the CPU
+	*  RTC 
+
+* (중요)IO가 프로텍션되면 메모리도 프로텍션된다 (IO는 MEM과 바로 통신)
+* (중요)메모리도 프로텍션되면 IO가 프로텍션되나? - OS의 메모리를 바꾸면 I/O의 프로텍션의 마지막 단계인 OS check validity를 검사할수있다?
+
+### Life of an OS
+* An OS is a program 
+	* T - main
+	* D(global vars init) 
+	* B(global vars uninit) - proc_t table
+	* XX
+	* Stack
+* when computer boots 
+	* firmware loads the OS
+	* jumps to main
+* OS initializes data structures 
+	* process tables
+	* device queues
+	* ETC
+* ---------------------
+* creates the state for the init process and puts it on RQ
+* starts the process on the top of RQ
+* OS is now an exception handler

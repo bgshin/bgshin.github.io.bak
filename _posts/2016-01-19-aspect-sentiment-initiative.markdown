@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "spect-Based Sentiment Analysis"
+title:  "Aspect-Based Sentiment Analysis"
 date:   2016-01-19 21:30:00 -0500
 categories: research
 ---
@@ -25,5 +25,8 @@ in SemEval-2015 Task 12](http://alt.qcri.org/semeval2015/cdrom/pdf/SemEval130.pd
 * [Dependency tree-based rules for concept-level aspect-based sentiment analysis](http://link.springer.com/chapter/10.1007/978-3-319-12024-9_5#page-1)
 * [Creating domain-specific semantic lexicons for aspect-based sentiment analysis](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7370083&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7370083)
 
+* [Convolutional Neural Networks for Sentence Classification](http://www.aclweb.org/anthology/D14-1181)
 
-
+# Dataset
+* E#A - entities attributes pair
+	* each value has to be chosen from prefefined inventories of entities and attributes for each domain

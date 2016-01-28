@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "IR Lecture 04"
+date:   2016-01-25 11:30:00 -0500
+categories: cs572
+---
+
+
+## LEC04
+### Phrase queries
+*  p.10
+	*  slide가 잘못된듯
+	*  ![](http://nlp.stanford.edu/IR-book/html/htmledition/img121.png)
+	*  to가 포함된 doc을 뽑고 be가 포함된거 뽑으면 candidate은 1,4,5가 됨
+	*  이 중에서 to의 location index바로 다음에 be의 인덱스가 있는놈 뽑으면 doc4에서 429->430, 433->434가 된다.
+*  p.12에 대한 답은 ![](http://nlp.stanford.edu/IR-book/html/htmledition/img122.png)
+*  p.13 의 질문 - Need an entry for each occurrence, not just once per document? 질문도 잘 모르겠음
+*  인버스인덱스와는 달리 positional index는  postings intersection operation을 하게 되면 |DOC|에 바운드 되지않고 |TOKEN|으로 된다.
+	*  [link](http://nlp.stanford.edu/IR-book/html/htmledition/positional-index-size-1.html)
+	*  	하지만 phrase and proximity searches를 원하는 유저들 때문에 대부분 이기능을 넣고있다.
+*  positional index의 공간문제 분석
+	*  하나의 포스팅은 term의 각각의 출현에 대한 엔트리를 필요로함?
+		* doc1은 to의 출현에 대한 리스트를 갖고있다 (7,18,33,72,86,231)
+	*  인덱스 사이즈는 따라서 평균 다큐먼트 사이즈에 의존적이게됨
+		* doc1은 6개의 to가있다, 다큐먼트가 클수록 to가 더 많게되고 그럼 doc1의 to리스트의 사이즈는 6보다 커질것이다
+	* 평균적으로 보통 웹싸이트는 1000개의 텀이 있다. 다른 종류들, 증권, 책, 서사시 등은 100,000개의 텀이있다 
+	* 1000텀마다 1개의 프리퀀시를 갖는 텀을 생각해보자
+	* 웹싸이트는 1개의 포지셔널 포스팅(positional posting, 리스트)를 갖을거고, 서사시등은 100개를 갖게될 것이다.
+* biword indexes + positional indexes 가능
+	* 어떤쿼리에 대해서는 바이워드, 다른쿼리에 대해서는 포지셔널 인덱스를 사용.
+	* 자주 쿼리가 됐던것을 프레이즈 인덱스에 포함
+	* 각 단어는 아주 일반적인데 그것들의 합성은 아주 rare한 경우엔 프레이즈로 합쳐야 개이득
+		* The Who 같은 경우인데 이건 1000배의 스피드업을 준다. Britney Spears는 단지 3배
+	* [link](http://nlp.stanford.edu/IR-book/html/htmledition/combination-schemes-1.html)
+
+### Tolerant Retrieval
+#### Voc 저장방법
+* 리스트
+	* lookup - O(V)
+	* update - O(V)
+* Hashes
+	* lookup - O(1)
+	* suffix prefix 공유하는 단어 찾기 힘들다 (tolerant retrieval에는 맞지않다)
+* Tree - easy insertion
+	* lookup - O(logn)
+	* update - O(logn) 
+* binary trees
+	* prefix
+	* O(logM)? M은 뭐지?
+* AVL Trees
+	* n=10^2인데 그러면 2^30이고 depth가 30~43가량 됨, 43번의 디스크억세스는 4초 소요, 사용불가
+* B-Trees
+
+* p.32에서 h는 뭔지 몰겠다 (질문필요)
+* p.37 연습문제
+	* pro*cent 쿼리? - 
+	* pro* 하는 btree하고 *cent하는 백워드 비트리의 인터섹션
+* 문제는 여기서 단순 프리픽스 서픽스 쿼리가 아닌 복합적인 X\*Y\*Z같은 쿼리가 있을경우 백워드 비트리 같은걸로 하기 힘들다는 것
+* 이걸 해결하려고 퍼뮤텀이 나온것임 - 단어문자 중간에 와일드 카드가 있는것을 프리픽스 비트리로 해결하고자 $싸인 붙이고 로테잇시켜서 인덱싱 해놓는것임
+* X*는 -  X\*\$ 가 붙고  \$X\*가 됨
+* hel*o 는 X=hel, Y=o, X\*Y => o$hel\*
+* X*Y\*Z는 X\*Y\*Z$ -> Z\$X\*Y\* -> Z\$X\*
+
+
+#### spelling check 
+* BK트리찾아보기
+* 

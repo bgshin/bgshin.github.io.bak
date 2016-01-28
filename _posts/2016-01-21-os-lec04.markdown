@@ -1,0 +1,119 @@
+---
+layout: post
+title:  "OS Lecture 04"
+date:   2016-01-21 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## ASL (Active Semaphore List)
+* OS는 negative 값에만 관심 (뭔가 기다리고있으니)
+* ASL is a semaphore who's value is <0
+* will be a guide of processes waiting in the semaphore
+
+
+### Data structure
+* AS is a double linked list of semaphore descriptives
+
+```cpp
+typedef struct semd_t {
+	struct semd_t *s_next, *s_prev;
+	int @s_semAdd; // 어디에 그 인티저가 있는지 정보
+	proc_link s_link; // 어떤 큐를 이 세마포디스크립터가 설명하는지
+} semd_t;
+```
+![tables]({{ site.url }}/images/OSLEC04A.png)
+
+```cpp
+semd_t semdTable[MAXPROC];
+```
+
+![tables]({{ site.url }}/images/OSLEC04B.png)
+
+```cpp
+void initSemd()
+void insertBlocked(int *semAdd, proc_t *p);
+// 프락티를 semadd(0x1500)에 넣기
+// 그림에서처럼 1500가 없으면 1000과 2010사이에 생성?
+// 2010에 넣는경우엔 큐에 추가함
+proc_t* removeBlocked(int *semAdd);
+// 1500은 에러
+// 2010에서는 헤드로 가서 제거후 리턴?
+proc_t* outBlocked(proc_t *p);
+// 2010과 2200에 모두 p=A가 있다면 모든 semd_h로 돌아서 찾아서 제거
+proc_t* headBlocked(int * semAdd);
+void headASL();
+// 리스트 엠티 체크
+```
+
+
+## Theory
+* Exception: Interrupts & Traps
+* Interrupts are exceptions triggered by hardware exerts
+	* timer expires
+	* key is pressed
+	* A disk operation has completed
+* Trap is an exception triggered by a CPU instruction
+* Error conditions
+	* divide by 0
+	* floating point overflow
+	* bad address
+	* illegal instructions 
+* Trap instruction
+	* purposely called a trap
+
+![tables]({{ site.url }}/images/OSLEC04C.png)
+
+* I/O가 끝나면 알려주기 위해 exception낸다
+* when exception occurs the CPU force the PC(prog counter) to an address of an exception handler
+* after the handler handles the exception it may need to return to the point of interruption
+	* some provision is needed to save state
+* two possibilities
+	* h/w saves state
+		* pros: handler is simpler, efficiently
+		* cons: unintelligently
+		* 왜 별로인가?: 안쓰는 floating-ponit register들도 다 저장해야함, timer같은경우는 쓰는레지스터가 거의 없음
+		* 
+	* minimal hw save, exception handler saves whatever it offers
+		* 핸들러에서 사용하는 일부만 세이브
+		* PC, SP, 
+
+* Which exception handler
+	* two possibilities
+		* only one handler at a fixed address
+			* polled exceptions
+	* vectored exceptions
+		* every exception has a number
+		* use an exception table
+		
+		```bash
+		   -------------------
+		  |    |    |    |    |
+		   -------------------
+		  |    |    |    |    |
+		   -------------------
+		  |    |    |    |    |
+		   --5----6-----------
+		  | A1 | A2 | A3 | A4 |
+		   --1----2----3---4--
+		```
+* Exception hadnlers need more privledge
+	* CPU has at least 2 modes
+		* user - non priv
+		* supervisor - priv
+	* CPU instructions
+		* non priv
+		* priv
+		* user mode로 priv instruction 실행하려하면 exception걸림
+	* the priv bit is set by the exception mechanism
+	
+	
+* trap instruction force a "trap" which invokes the exception mechanism
+* exception handler is the syscall handler in the OS
+
+
+
+### NEXT
+* 
+
