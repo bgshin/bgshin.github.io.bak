@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "OS Lecture 07"
+date:   2016-02-02 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## Virtualization
+* 	Popular
+	* server consolidation
+	* run multiple OS types and versions
+	* security reasons
+	* test new OS's & SW w/o compromising production work
+* hyperviser: partitions the hardware and makes each OS think its running directly on the HW
+* Type 1 Hypervisor
+	* ![](/images/OSLEC07A.png)
+	* runs right on the HW
+	* Xen,  KVM, Vmware ESX
+	* The OS running on top of type 1 can run in two ways
+		* fully virtualized
+			* client OS is unaltered and unaware of the hypervisor
+			* uses trap 
+				* 트랩(인터럽트)하면 하이퍼바이저로감, 시물레이션함, 레지스터도 시물레이션함
+				* simulates polk activity
+				* windows client runs this way
+			* 단점: 트랩하고 시물하면 느리다, some efficiency lost
+		* paravirtualized
+			* hypervisor has an API
+			* Guest OS uses this API
+			* open system OS's have this API
+			* 훨씬 효율적임
+* Type 2 Hypervisor
+	* ![](/images/OSLEC07B.png)
+	* virtualBox, parallels, vmware
+
+	
+### Java
+* Add another layer of portability
+* Java VM simulates a fictional CPU
+	* instruction set - BYTE CODES
+	* JavaVM is a native application
+* Java compiler compiles to byte codes
+* runs in Interpreter speeds
+* Secure since 
+	* cryptographic security
+	* runs in a sand box
+
+
+* 53:29 숙제
+
+
+
+## Scheduler
+* ![](/images/OSLEC07C.png)
+* 

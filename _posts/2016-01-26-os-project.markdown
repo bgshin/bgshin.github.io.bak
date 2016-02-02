@@ -22,4 +22,22 @@ categories: cs580
 * ![](/images/testcase01.png)
 
 
+## 추가테스트 아이디어
+* procp가 3개 있을때 첫번째 proc_link를 사용하는 tp를 이용해서 큐에서 제거(outproc)후에 다른 tp에 해당 큐삽입
+
+## 질문거리
+* 프로세스큐에 존재하는 엘레먼트를 insert하려고 할때 처리?
+	* If I try to insert a process element in a queue but it is already in the queue, what happen?
+	* 답: 
+* 리무브나 outproc했는데 더이상 어느프로세스 큐에도 존재하지 않을경우 자동으로 freeProc?
+	* After I removeProc or outProc a process element, if that element is not any more enlisted in any queue, do I have to call freeProc in order to return it into free list?
+	* 답:
+* 프로세스 큐에 속해있는 엘레먼트를 freeProc하면 에러? 아니면 모두 outproc하고 free?
+	* If I try to freeProc a process element which belongs to a queue, do I have to outproc it and free?
+	* 답:
+
+
+
+	
+
 
