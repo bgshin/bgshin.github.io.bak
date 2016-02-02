@@ -18,5 +18,8 @@ categories: cs580
 	* ![](/images/OSPROJ03.png)
 
 
-### outProc
-* 
+### mytest01()
+* ![](/images/testcase01.png)
+
+
+

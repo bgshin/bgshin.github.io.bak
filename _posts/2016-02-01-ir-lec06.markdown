@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "IR Lecture 06"
+date:   2016-02-01 11:30:00 -0500
+categories: cs572
+---
+
+
+## HW
+* 필드 웨이팅은 엑스트라 크레딧
+* 에를들어 k3조정등(p.27)
+
+
+## 베이지
+* http://www.mathcs.emory.edu/~eugene/cs572/lectures/lecture6-bm25-eval.pdf
+* 
+* 질병모델 계산
+	* $.99*0.0001/0.010098 = 0.009803921569$
+	* 0.98%
+
+* p15
+	* 미싱텀 문제있다 qt쪽에
+* k는 디스카운드 오브 새 텀 (p.24)
+* p27 뉴스의 파라미터 b가 0.6인건 비교적 길이가 비슷
+* 

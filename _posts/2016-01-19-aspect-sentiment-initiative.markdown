@@ -27,6 +27,20 @@ in SemEval-2015 Task 12](http://alt.qcri.org/semeval2015/cdrom/pdf/SemEval130.pd
 
 * [Convolutional Neural Networks for Sentence Classification](http://www.aclweb.org/anthology/D14-1181)
 
-# Dataset
+## Dataset
 * E#A - entities attributes pair
 	* each value has to be chosen from prefefined inventories of entities and attributes for each domain
+
+
+## Research direction
+### bigdata
+* index following aspect extraction
+* 
+
+### IR
+* sentence pair ranking (QA)
+* 
+
+
+
+
