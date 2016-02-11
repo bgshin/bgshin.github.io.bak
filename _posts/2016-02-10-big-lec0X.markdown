@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "BIG Lectures"
+date:   2016-02-10 14:30:00 -0500
+categories: cs584R
+---
+
+
+## 
+* 미디언 - 각점과사이거리같은점
+* 미디언은 아웃라이어에 강하다
+* RKHS 모르겠따
+* 

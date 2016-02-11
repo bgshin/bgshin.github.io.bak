@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "OS Lecture 08"
+date:   2016-02-04 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## 
+* 아웃블락은 테일이 널이됨 셈을 없애지않음
+
+
+
+## EMACSIM
+
+* p1 - 

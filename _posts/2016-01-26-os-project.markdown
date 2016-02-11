@@ -35,6 +35,9 @@ categories: cs580
 * 프로세스 큐에 속해있는 엘레먼트를 freeProc하면 에러? 아니면 모두 outproc하고 free?
 	* If I try to freeProc a process element which belongs to a queue, do I have to outproc it and free?
 	* 답:
+* outBlocked와 headBlocked에서 큐를 꺼냈는데 비게되면 removeBlocked처럼 해당 ASL을 없애야하는지?
+
+
 
 
 

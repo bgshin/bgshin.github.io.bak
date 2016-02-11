@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "IR Lecture 07"
+date:   2016-02-03 11:30:00 -0500
+categories: cs572
+---
+
+
+## HW
+* regX - XML
+
+## Lec
+* p9 평균프리시전을 갖고 랭크몇까지 볼건가 결정
+* rl도 가능할까? 피드백으로?
+	* rl 과 TSTM?
+* word2vec 버전의 rocchio?
+* p30 스파스(고차원)하기때문
+* 바이너리 인디펜던스 모델 수식전개해보기

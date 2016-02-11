@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "IR Lecture 08"
+date:   2016-02-08 11:30:00 -0500
+categories: cs572
+---
+
+
+## HW
+* 이번렉처의 앞쪽이 엑스트라 크레딧
+
+## Lec
+* http://www.mathcs.emory.edu/~eugene/cs572/lectures/lecture8-lm1.pdf
+* BM이랑 RCV쪽 다시보기
+* 유니그람에서 stop 이유? 12:17분
+	* 무한대로할수없어서?
+* 라플라스스무딩문제 = 안본워드에 큰 확률을 준다
+* 스무딩 좋은거 예제
+* 에모리를 첨 못봤을때
+	* \lambda P(E|Start) (1-\lambda)P(Emory)
+* 예제에서 미싱 텀은?
+	* 
