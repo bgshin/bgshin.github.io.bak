@@ -40,7 +40,7 @@ categories: cs580
 	* shortest job first
 	* provably minimizes average waiting time
 	* scatch of proof
-		* ![](/images/OSLEC1C.png)
+		* ![](/images/OSLEC11C.png)
 	* starvation - 작은게 계속 들어오면 크놈은 절대 실행못함
 		* aging 
 * Priority Queing
