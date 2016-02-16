@@ -6,8 +6,15 @@ categories: cs584R
 ---
 
 
-## 
+## 0210
 * 미디언 - 각점과사이거리같은점
 * 미디언은 아웃라이어에 강하다
 * RKHS 모르겠따
+
+
+## 0215
+### Nearest Neighbor / Similarity Search
+* LSH의 아이디어 - 랜덤하게 프로젝트하다보면 결국 좋은 프로젝션찾는다
+* 1-2pages
+* data, prob, approaches
 * 
