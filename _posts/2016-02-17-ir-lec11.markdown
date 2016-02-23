@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "IR Lecture 11"
+date:   2016-02-17 11:30:00 -0500
+categories: cs572
+---
+
+
+## HW
+* 
+
+## Lec
+* Lecture 11: Topic Models
+* EM한번유도해봐야함
+* 
