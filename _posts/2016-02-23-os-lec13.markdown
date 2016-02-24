@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "OS Lecture 13"
+date:   2016-02-23 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## HW
+* Stack = 130,000 or 128k, 128*1024
+
+
+## 스케줄링
+
+```bash
+cs580000/share/L12-LinuxSched.pptx
+```
+
+* p.38-43 dynamic time slice
+* (1.25)^{nicelevel)
+* P.37
+	* O(1)은 씨피유 IO바운드 알기어렵다?
+	* Time slice has to be mulWple of Wck, how to give priority to freshly woke
+
+
+## Deadlocks
+* Ay OS need to manage resources 
+* Model
+	* request
+	* grant - holding the resources
+	* release
+
+* A deadlock on a set of processes occurs when each process in the set is requesting a resource held by another process
+* eg. 
+	* 2 resources r1,r2
+	* 2 processes p1,p2
+	* p1 holds r1 and requests r2
+	* p2 holds r2 and requests r1
+* Necessary condition for a deadlick
+	* Mutual exclusion
+	* hold and wait
+	* circular wait
+		* old process힛 하면 써쿨라
+	* No Premption
+
+		
+* Avoid deadlock
+	* negate at least one of the necessary conditions
+		* ME - try to make resources shareable
+		* H&W - 
+			* require processes to request all resources at once
+				* 갖고 요구하는게 아니라 다 갖거나 다 못갖거나
+				* 안쓰는 리소스도 오래갖게되는 단점
+			* give back resources before making a new request
+				* 3개를 원하는데 2를 반환하고 마지막을 요구하던지
+				* 3개를 동시에 원하면 2개를 반환하고 3개를 한꺼번에 요구
+		* CW
+			* give each resource a positive int number
+			* only allow requests for resources with a higher number than those held
+				* 1,3갖고있으면 2를 못요구
+			* 오더된 리소스에만 적용가능
+			* 인풋(작은숫자) 아웃풋(큰숫자) 
+		* No Premption
+			* allow premption
+			* need a save/restore mechanism
+			* 리소스가 프로세스로부터 뺏길수있는거
+
+			
+## Resource graph
+* Nodes p_1, ... ,p_k
+* Resources r_1, ... ,r_n
+* Directed graph
+	* r_1->p_1 (r1 is being held by p1)
+	* p_2->r_2 (p2 is requesting r2)
+* ![]()
+* A necessary and sufficient condition for dead lock is a directed cycle
+	* detect
+
+* multi resource exception
+* 이경우는 네세서리지 서피시언트가 아니다
+* ![]()
+
