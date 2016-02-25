@@ -73,11 +73,11 @@ cs580000/share/L12-LinuxSched.pptx
 * Directed graph
 	* r_1->p_1 (r1 is being held by p1)
 	* p_2->r_2 (p2 is requesting r2)
-* ![](/images/OSLEC13A.png)
+* ![]()
 * A necessary and sufficient condition for dead lock is a directed cycle
 	* detect
 
 * multi resource exception
 * 이경우는 네세서리지 서피시언트가 아니다
-* ![](/images/OSLEC13B.png)
+* ![]()
 

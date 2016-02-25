@@ -8,7 +8,7 @@ categories: cs580
 
 
 ## HW
-![]()
+![](/images/OSLEC12A.png)
 
 ## Solaris
 * Mixture of BSD
