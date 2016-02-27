@@ -53,7 +53,7 @@ categories: cs580
  	* 자식을 죽여야하는데 자식을 다 갖지않고 어떻게 자료구조를 해야 (1-2개의 노드로 자식을 표현할수있을까)
 * SYS3 - semop
 	* D4 <- &VPOP
-	* D2 -> length
+	* D3 <- length
 
 	```bash
 	 -------------------------------------------
@@ -74,7 +74,7 @@ categories: cs580
 	* 자유케 되면 런큐로 간다
 * SYS5
 	* specify trap state vector
-	* DQ <- 
+	* D2 <- 
 		* 0 prog (0나누기)
 		* 1 MM (메모리)
 		* 2 sys

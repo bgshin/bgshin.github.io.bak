@@ -1,83 +1,109 @@
 ---
 layout: post
-title:  "OS Lecture 13"
-date:   2016-02-23 14:30:00 -0500
+title:  "OS Lecture 14"
+date:   2016-02-25 14:30:00 -0500
 categories: cs580
 ---
 
 
 
 ## HW
-* Stack = 130,000 or 128k, 128*1024
-
-
-## 스케줄링
-
-```bash
-cs580000/share/L12-LinuxSched.pptx
-```
-
-* p.38-43 dynamic time slice
-* (1.25)^{nicelevel)
-* P.37
-	* O(1)은 씨피유 IO바운드 알기어렵다?
-	* Time slice has to be mulWple of Wck, how to give priority to freshly woke
+* ![]()
 
 
 ## Deadlocks
-* Ay OS need to manage resources 
-* Model
-	* request
-	* grant - holding the resources
-	* release
+* definition
+* necessary condition
+* resource graph
 
-* A deadlock on a set of processes occurs when each process in the set is requesting a resource held by another process
-* eg. 
-	* 2 resources r1,r2
-	* 2 processes p1,p2
-	* p1 holds r1 and requests r2
-	* p2 holds r2 and requests r1
-* Necessary condition for a deadlick
-	* Mutual exclusion
-	* hold and wait
-	* circular wait
-		* old process힛 하면 써쿨라
-	* No Premption
 
+* For better algorithms the OS needs more info
+	* have each process declare its maximum need
+		* 필요할거같은거 다 요구하는게 아니라 맥시멈 니드?
+* A system is called safe if there is an ordering of the processes
+	* p1, p2, ..., pn
+	* so that p1 can be awarded its maximum declared resources so that it can complete and return all resouces
+	* then p2 can do the same
+	* p3...pn 
+	* example
 		
-* Avoid deadlock
-	* negate at least one of the necessary conditions
-		* ME - try to make resources shareable
-		* H&W - 
-			* require processes to request all resources at once
-				* 갖고 요구하는게 아니라 다 갖거나 다 못갖거나
-				* 안쓰는 리소스도 오래갖게되는 단점
-			* give back resources before making a new request
-				* 3개를 원하는데 2를 반환하고 마지막을 요구하던지
-				* 3개를 동시에 원하면 2개를 반환하고 3개를 한꺼번에 요구
-		* CW
-			* give each resource a positive int number
-			* only allow requests for resources with a higher number than those held
-				* 1,3갖고있으면 2를 못요구
-			* 오더된 리소스에만 적용가능
-			* 인풋(작은숫자) 아웃풋(큰숫자) 
-		* No Premption
-			* allow premption
-			* need a save/restore mechanism
-			* 리소스가 프로세스로부터 뺏길수있는거
+		12 resources ( 3available)
+		
+		| ps   | current  | max |
+		|------|-----|---------|
+		| p1   | 5      |  10   |
+		| p2   | 2      |  4   |
+		| p3   | 2      |  9   |
+		|     | 9      |  23   |
+		
+		    
+		* is this a safe system
+		* p2 will be done (need just 2 more)
+		* release 2-> 5 available
+		* p1 done, release
+		* 10 availabel p3 can be done
+## Bankers algorithm
+* start safe stay safe
+* request, hold, release (OS 가 리퀘스트를 허락할지결정)
+* granting이 세이프하면 억셉, 아니면 거절
+* supp p2 request 1
+	* available 2, p2.currnet = 3
+	* p2, p1, p3, so its safe
+	* grant
+* supp p1 request 1
+	* available 1, p2.currnet = 3, p1.currnet = 6
+	* p2, p1, p3, so its safe
+	* grant
+* supp p3 request 1
+	* available 0, p2.currnet = 3, p1.currnet = 6, p3.currnet = 3
+	* reject!
+
+	
+## Safety algorithm
+* p1,..pn
+* r1[],...,rm[] (m types), multiple for each type
+* data
+	* Avail[j] = # of resources available of type r_j
+	* Max[i,j] = max # of r_j's declared by p_i
+	* Alloc[i,j] = # r_j's held by p_i
+	* Need[i,j] = Max[i,j]-Alloc[i,j]
+	* Work[j] is initially Avail[j]
+	* Finish[i] initially false (p_i done)
+* while something changes
+	* for i=1 to n
+		* if Finish[i] is false AND Need[i,j] <= Work[j] for all j 
+		* // what it need is curr available
+			* then Finish[i] = True
+			* Work[j] = Alloc[i,j] for all j
 
 			
-## Resource graph
-* Nodes p_1, ... ,p_k
-* Resources r_1, ... ,r_n
-* Directed graph
-	* r_1->p_1 (r1 is being held by p1)
-	* p_2->r_2 (p2 is requesting r2)
-* ![]()
-* A necessary and sufficient condition for dead lock is a directed cycle
-	* detect
+* Two cases
+	* Finish[i] = True for all i : safe
+	* Finish[i] = False some i : not safe
 
-* multi resource exception
-* 이경우는 네세서리지 서피시언트가 아니다
-* ![]()
-
+       alloc  max   need
+	p1 0 1 0  7 5 3  7 4 3
+	p2 2 0 0  3 2 2  1 2 2
+	p3 3 0 2  9 0 2  6 0 0 
+	p4 2 1 1  2 2 2  0 1 1
+	p5 0 0 2  4 3 3  4 3 1
+	
+	   7 2 5
+	   
+	   r1 r2 r3
+	   10 5  7
+	   
+	  work = 3 3 2 (diff b/w r-alloc)
+	  
+	 * p2 1 2 2 ok less than 3 2 2
+	 * after p2, work = 5 3 2
+	 * p4 0 1 1 ok less than 5 3 2
+	 * after p4, work = 7 4 3
+	 * p5 0 0 2 ok
+	 * after p5, work = 7 4 5
+	 * p1 7 4 3 ok 
+	 * after p1, work = 7 5 5
+	 * p3 
+	 * after p3, work = 10 5 7
+	 * 모두 체크되었으므로 safe
+	 * O(n^2*m) 
