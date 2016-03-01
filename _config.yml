@@ -18,8 +18,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 github_username:  bgshin
 
 # Build settings
-markdown: Redcarpet
-# markdown: kramdown
+# markdown: Redcarpet
+markdown: kramdown
 # highlighter: pygments
 # permalink: pretty
 # relative_permalinks: false
