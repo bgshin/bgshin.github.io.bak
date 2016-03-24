@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "OS Lecture 18"
+date:   2016-03-17 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## Paging
+* P|D -> f|d
+	* this mapping is done by MMU
+	* MMU is governed by table
+	* frame, displacement
+	* ![](/images/OSLEC18A.png) 
+* Disadvantages
+	* page has no logical significance
+		* 같은 페이지에있다고 어떤 논리적의미는 없다
+		* makes sharing ?
+	* Too many pages
+		* page table is huge
+		* ![](/images/OSLEC18B.png) 
+* Advantages
+	* no external fragmentation
+* Segmenting
+	* block of memory of a variable size
+	* segment table
+	* logical address
+		* seg.no(s) | offset(d)
+		* ![](/images/OSLEC18C.png) 
+		* ![](/images/OSLEC18D.png)
+	* Advantages
+		* segment is logical and might be shared
+		* small seg table
+	* disadvantages
+		* external fragmentation
+* Paged segmentation
+	* s|p|d - logical (segm, page, offset)
+	* ![](/images/OSLEC18E.png)
+	* Advantages
+		* no external fragmentation
+		* segments are still logical
+		* small seg table
+		* smaller page talbes - because only have to cover the segments
+
+
+## emacsim
+* p.15
+	* ![](/images/OSLEC18F.png) - Fig.5
+* p.13
+	* CRP - check root pointer
+		* register points to seg table
+		* conforms address of segment table
+	* Fig 3.
+		* p - presence bit (p=0이면 seg fault)
+* p.14
+* p.16

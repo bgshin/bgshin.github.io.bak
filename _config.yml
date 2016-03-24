@@ -18,8 +18,22 @@ baseurl: "" # the subpath of your site, e.g. /blog
 github_username:  bgshin
 
 # Build settings
-# markdown: Redcarpet
-markdown: kramdown
+# markdown: redcarpet
+# redcarpet:
+#   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["tables", "strikethrough", "superscript", "with_toc_data"]
+
+
+
+# markdown: kramdown
+# kramdown:
+#   input: GFM
+
+# highlighter: rouge
+  # syntax_highlighter: rouge
 # highlighter: pygments
 # permalink: pretty
 # relative_permalinks: false

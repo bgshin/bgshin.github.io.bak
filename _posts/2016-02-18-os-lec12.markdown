@@ -64,6 +64,7 @@ categories: cs580
 	* Active <-> Inactive : 왔다갔다 할때만다 레벨 조정, 퀀텀조정
 	* 근데 모두 Inactive 되면 그걸 Active로 만듦
 
+
 	| Active              | Inactive |
 	|---------------------|-----|
 	| 1              | 1 |

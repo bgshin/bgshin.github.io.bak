@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "OS Lecture 16"
+date:   2016-03-03 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## 질문
+* 프리브는 난브리에게 서비스 제공
+
+
+## Interrupts
+* intinit
+	* EVT, new areas
+* waitforpclock
+	* intsemop(UNLOCK) on the pclock semaphore
+		* intsemop인이유는 뉴클리우스는 시스템콜 부를수없기때문이다
+* waitforio
+	* distinguish 2 cases
+		* sem=1, int has occurred
+			* sem=0, copy the status/length, LDST(old_area);
+		* sem=0, int has not occured
+			* intsemop(LOCK) on sem(dev), schedule
+* intdeadlock
+	* called when RQ is empty
+	* 1) process on pseudoclock
+		* load a time slice (intschedule) (timer will interrupt), 
+			* load 5000 into RTC
+		* sleep
+	* 2) process on devsemop (waiting for dev interrupt)
+		* sleep
+	* 3) 
+		* no process left - normal termination (ASL is empty)
+		* processes on semaphore queues - abnormal termination (ASL is not empty)
+* Pre-emptive scheduling
+	* set a quantum into the RTC
+	* when the RTC interrupts move the process at the top of the RQ to the bot by ms
+
+
+* 모두 inthandler 부름
+	* intterminalhandler
+	* intprinterhandler
+	* intdiskhandler
+	* intfloppyhandler
+	* compute a dev number
+	* 2 cases
+		* semop=-1 (waitforIO occurred)
+			* intsemop(UNLOCK)
+			* copy from dev register to the state_t
+			* move it to the tail of RQ
+			* LDST(old_area) - 웨이팅하는놈한테 가는게아니라 런한놈한테 가는거임
+		* sem=0 (waitforIO hasn't occurred)
+			* sem=1, copy dev reg to array
+			* LDST(old_area)
+* intclockhandler
+	* RTC interrupts
+	* if RQ not empty moves head to tail
+		* state_t <- save area
+		* move to bottom of RQ
+		* start the new one
+	* it ticks the pseudo clock if necessary
+		* last time it was ticked compared with current time
+		* don't raise PCS(pseudo clock semop) above 0
+		* 100ms는 작기떔 인트걸자마자 클락이 올라갈일이없다고 가정
+* intsemop
+* sleep
+	* while(1)
+		* 단점1: 
+			* 로드 컨스턴트, 체크, 브랜치 PC가 계속 같은곳을 왔다갔다하면 안좋다
+		* 단점2? 42:00
+	* asm stop
+		* puts a computer nothing happen until int happen
+		* 하드웨어 관점에선 좋음
+		* 인터럽트 기다리는 입장에서도 버스를 비워줘서 좋다
+* Q
+	* RTC 오프되면 intclockhandler로 가고
+	* RQ가 0이면 테일로 보내고 스케줄말고 이미 체크했으니까 LDST?
+	* 이거만하면되나? 48:00쯤
+
+## Memory Management
+
+* Fundamental issue is binding, ie. associating a physical address to a logical variable
+* Binding time
+	* compile time (early)
+	* load time
+	* execution time (late)
+	* 
+* Problem: less physical memory than logical memory
+	* overlays
+		* breaking a program into phases
+		* where phases don't need to be resident simultaneously
+		* mong to 1 binding 58:50?
+	* Dynamic binding (loading)
+		* overlays
+		* load at run time libraries as needed
+	* Mechanism for dynamic binding relies on relocation
+	* code that can be loaded anywhere in the memory
+	* example: 
+		* PC relative addressing
+		* base registers
+		* OP add1,add2 (원래 이모양)
+		* add -> reg+offset
+			* reg는 PC나 베이스 레지스터가 될수있다
+		* move 100(A4), 200(A4)
+			* A4 - set to the current base
+	* Multiple base registers allows the utilization of non-contiguous memory
+	* 
+
+
+	
+	
+	
+	
