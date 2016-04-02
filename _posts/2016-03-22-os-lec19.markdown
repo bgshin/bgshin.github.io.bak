@@ -31,13 +31,13 @@ categories: cs580
 	* 32 segments
 	* each seg has 1024 pages
 	* each pages 1/2K 
-* ![](/images/OSLEC19A.png)
+* ![](http://bgshin.github.io/images/OSLEC19A.png)
 * demand paging
 	* the first time a page is referenced
 		* page fault trap
 		* OS picks a frame from the free pool and maps it into the segment
 * in this phase there will be sufficient pages in the free pool
-* ![](/images/OSLEC19B.png)
+* ![](http://bgshin.github.io/images/OSLEC19B.png)
 
 
 ## Computing contexts

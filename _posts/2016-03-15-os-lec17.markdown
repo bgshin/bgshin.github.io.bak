@@ -18,7 +18,7 @@ categories: cs580
 ## Multiprogramming
 * alloating memory to multiple processes running at once
 * Traditional fixed partitions
-	* ![](/images/OSLEC17A.png)
+	* ![](http://bgshin.github.io/images/OSLEC17A.png)
 * Longterm scheduler
 	* selects a partition
 		* not in use currently
@@ -34,7 +34,7 @@ categories: cs580
 * Variable partitions
 	* start with one big partition
 	* select a partition and slice off the excess
-	* ![](/images/OSLEC17B.png)
+	* ![](http://bgshin.github.io/images/OSLEC17B.png)
 	* Strategies
 		* first fit - 장점 - 간단 , 사이즈 관리안해도됨
 		* best fit - External을 생기게할수있다
@@ -52,12 +52,12 @@ categories: cs580
 ## Paging
 * Divide memory into fixed size pages
 	* size is a power of 2
-	* ![](/images/OSLEC17C.png)
+	* ![](http://bgshin.github.io/images/OSLEC17C.png)
 	* eg) n=12, b=10, 
 		* pagesize = 2^10 = 1K
 		* num of pages = 2^12  = 4k
-	* ![](/images/OSLEC17D.png)
-	* ![](/images/OSLEC17E.png)
+	* ![](http://bgshin.github.io/images/OSLEC17D.png)
+	* ![](http://bgshin.github.io/images/OSLEC17E.png)
 * No external fragmentation
 * small amount of internal frag - 3.5필요시 4를 얼록하기떔
 * Every process has its own page table
@@ -69,11 +69,11 @@ categories: cs580
 	* put the same page num in more than one table
 	* eg) text segments, data structures
 * 실제 pagetable은  2칼럼아니고 1칼럼이면 됨 - 로지컬넘버는 단순 증가숫자라서
-* p/d찾으러 두번감 - ![](/images/OSLEC17F.png)
+* p/d찾으러 두번감 - ![](http://bgshin.github.io/images/OSLEC17F.png)
 * MMU has a page cache
 	* repeated access to the same (recent) pages take only one trip across the mem bus (SW)
 	* cache use CAM - content addressable memory
-	* ![](/images/OSLEC17G.png) (HW)
+	* ![](http://bgshin.github.io/images/OSLEC17G.png) (HW)
 
 
 

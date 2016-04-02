@@ -13,7 +13,7 @@ categories: cs580
 * T-proc
 	* user mode - seg1에서 31페이지 시작해서 30넘어가면 디멘드페이지해서 얻어옴
 	* priv mode-10 of them Tsysstack[], Tmmstack[]
-* ![](OSLEC21A)
+* ![](http://bgshin.github.io/images/OSLEC21A.png)
 * Need support layer stacks
 	* support proc
 	* priv T-proc (Sys중 MM일어남)
@@ -30,6 +30,6 @@ categories: cs580
 
 * New/Old	
 	* 3 pairs for each T-process
-	* ![](OSLEC21B)
+	* ![](http://bgshin.github.io/images/OSLEC21B.png)
 
 

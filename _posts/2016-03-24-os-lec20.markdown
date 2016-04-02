@@ -18,7 +18,7 @@ categories: cs580
 	* D4 count ->
 	* D2 count <- (return), actually written
 * IO는 피지컬어드레스다
-* ![](OSLEC20A)
+* ![](http://bgshin.github.io/images/OSLEC20A.png)
 * SYS13
 	* delay 
 	* D4 - micro sec

@@ -76,7 +76,7 @@ categories: cs580
 ## Page replacement algorithm
 * FIFO
 	* victimize the present page that was demanded in earliest
-	* ![](OSLEC22A)
+	* ![](http://bgshin.github.io/images/OSLEC22A.png)
 	* Belady's Anomaly
 		* more frames can be worse
 	* Subset property
