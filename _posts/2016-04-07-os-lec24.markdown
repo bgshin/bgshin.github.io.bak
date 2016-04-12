@@ -8,7 +8,7 @@ categories: cs580
 
 
 ## Subset prob
-![](http://bgshin.github.io/images/OSLEC23A.png)
+![](http://bgshin.github.io/images/OSLEC24A.png)
 * FIFO는 S,T가 다를수있다
 * Exercise (누가 subset prop성립하는지?)
 	* MFU - 
@@ -28,7 +28,7 @@ categories: cs580
 * S/W Approx to LRU
 	* uses 1 ref bit
 	* second chance replacement (Low/Hi watermark on free list)
-	* ![](http://bgshin.github.io/images/OSLEC23B.png)
+	* ![](http://bgshin.github.io/images/OSLEC24B.png)
 	* Clock implementation
 		* start scan when low watermark reached
 		* if the ref bit is on, turn it off
@@ -41,7 +41,7 @@ categories: cs580
 * SYS11 Virtual V	
 * SYS12 Virtual P
 	* D4<-VA(in seg2)
-	* ![](http://bgshin.github.io/images/OSLEC23C.png)
+	* ![](http://bgshin.github.io/images/OSLEC24C.png)
 * SYS14 diskput 
 * SYS15 diskget 
 	* D3<-VA (seg2일경우 Vsem으로 보호해야함)
@@ -49,5 +49,5 @@ categories: cs580
 	* D2<-sector#
 	* D2-># of bytes trans
 	* Use disk daemon to execute a management algorithm
-	* ![](http://bgshin.github.io/images/OSLEC23D.png)
+	* ![](http://bgshin.github.io/images/OSLEC24D.png)
 
