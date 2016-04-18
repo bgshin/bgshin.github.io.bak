@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "OS Lecture 26"
+date:   2016-04-14 14:30:00 -0500
+categories: cs580
+---
+
+
+
+## 세컨챈스 질문
+## 디스크디몬 웨잇포아이오 질문
+* 
+
+
+## Allocation
+### Windows
+* clusters pages
+* establishes a working set min & max per process
+* when under the max, it pages from the global pool
+* when over its max, it pages from its own pages
+* page replacement runs when the global pool falls below a limit (low water mark)
+	* it gets its pages from processes that are over their min
+* uses second chance to choose pages
+
+### Solaris
+* params
+	* minfree (minimum)
+	* desfree (desirable)
+	* lotsfree 
+	* min < des < lots
+* runs second chance with the modifies clock algorithm
+* ![](http://bgshin.github.io/images/OSLEC26A.png)
+* slowscan
+* fastscan
+* Above lotsfree
+	* no scanning
+* below lotsfree
+	* scan rate varies between slow scan and fast scan
+* below desfree checks more frequently for # of free pages
+* if unable to keep desfree for 30 seconds, it checks on every fault
+* below minfree scans  continuously until above minfree
+
+### Linux
+* keeps track of the "age" of a page with the modified clock algorithm
+* Mixture of LFU & LRU
+* Each time the clock passes a page it increases the age if it has been referenced since the last pass
+* If the page hasn't been referenced decrease its age (bonus point from LFU)
+* if Age is 0 its a candidate for replacement
+
+
+## Mutual exclusion
+* Example 
+	* count - # of available 
+	* N buffers
+	* producer
+		* while (count==0) ; //loop
+		*   use a buffer (put something in it)
+		* count--;
+	* consumer
+		* while(count==N);
+		*   eat a buffer (get something out of buffer)
+		* count++;
+	* Need an operator to ensure mutual exclusion
+* MB (Mutual exclusion begin)
+* critical section (updating count)
+* ME (Mutual exclusion end)
+### Required properties
+* exclusion
+* progress - 
+	* if some process P executes MB then eventually some process Q will return from MB
+* bounded waiting
+	* there is an integer N such that if
+		* MB(P) then at most N processes can exit MB before P
+
+### Implementation
+* with an OS, can use semaphores, S=1
+* MB(S) - P on S
+* ME(S) - V on S
+* OS does this by turning off interrupts
+* No OS
+	* System call expansive?-> can't use sem
+	* can't disable interrupts
+* HW solution - atomic check and set(ACS)
+	* ACS(X)
+	* atomically test X for non-zero, 
+	* sets the value of X to 1
+	* ACS(X) - returns 
+		* 0: value of X was already 1
+		* 1: value of X was 0 and now is 1
+	* some CPU have a HW instruction for this
+	
+* Software only solution - 2 process solution
+	* 0,1 PID
+	* global var TURN=0
+	* local variable ME = {0,1}, HIM={1,0}
+	* MB: while(TRUN!=ME);
+		* 내차례가 아니면 루프
+	* ME: TURN=HIM
+		* 나올때 차례넘김
+	* bounded waiting is ok
+	* progress는 문제있다? 01:09:00
+		* NO progress
+	* 해결책?
+		* global variable 
+			* want[2] = {0,0}
+		* MB: while(want[HIM});
+			* want[ME]=1;
+		* ME: want[ME]=0;
+		* No excusion
