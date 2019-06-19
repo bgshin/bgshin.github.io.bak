@@ -1,4 +1,4 @@
 
 ```
-$ ./bin/deploy [--user]
+$ ./bin/deploy --user
 ```
