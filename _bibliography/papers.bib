@@ -1,6 +1,18 @@
 ---
 ---
 
+@article{shin_20a,
+  Abstract = {The infection of a novel coronavirus found in Wuhan of China (SARS-CoV-2) is rapidly spreading, and the incidence rate is increasing worldwide. Due to the lack of effective treatment options for SARS-CoV-2, various strategies are being tested in China, including drug repurposing. In this study, we used our pre-trained deep learning-based drug-target interaction model called Molecule Transformer-Drug Target Interaction (MT-DTI) to identify commercially available drugs that could act on viral proteins of SARS-CoV-2. The result showed that atazanavir, an antiretroviral medication used to treat and prevent the human immunodeficiency virus (HIV), is the best chemical compound, showing an inhibitory potency with Kd of 94.94 nM against the SARS-CoV-2 3C-like proteinase, followed by remdesivir (113.13 nM), efavirenz (199.17 nM), ritonavir (204.05 nM), and dolutegravir (336.91 nM). Interestingly, lopinavir, ritonavir, and darunavir are all designed to target viral proteinases. However, in our prediction, they may also bind to the replication complex components of SARS-CoV-2 with an inhibitory potency with Kd < 1,000 nM. In addition, we also found that several antiviral agents, such as Kaletra (lopinavir/ritonavir), could be used for the treatment of SARS-CoV-2. Overall, we suggest that the list of antiviral drugs identified by the MT-DTI model should be considered, when establishing effective treatment strategies for SARS-CoV-2.},
+  title={Predicting commercially available antiviral drugs that may act on the novel coronavirus (SARS-CoV-2) through a drug-target interaction deep learning model},
+  author={Bo Ram Beck and Bonggun Shin and Yoonjung Choi and Sungsoo Park and Keunsoo Kang},
+  journal={Computational and Structural Biotechnology Journal},
+  volume={18},
+  pages={784-790},
+  year={2020},
+  pdf = {covid.pdf},
+  publisher={Elsevier}
+}
+
 @article{shin_19e,
   Abstract = {Artificial neural network-based analysis has recently been used to predict clinical outcomes in patients with solid cancers, including lung cancer. However, the majority of algorithms were not originally developed to identify genes associated with patients' prognoses. To address this issue, we developed a novel prognosis-related feature selection framework called Cascaded Wx (CWx). The CWx framework ranks features according to the survival of a given cohort, by training neural networks with three different high- and low-risk groups in a cascaded fashion. We showed that this approach accurately identified features which best identify the patients' prognoses, as compared to other feature selection algorithms, including the cox proportional hazard and Coxnet models, when applied to the cancer genome atlas (TCGA) lung adenocarcinoma (LUAD) transcriptome data. The prognostic potential of the top 100 genes identified by CWx outperformed or was comparable to those identified by the other methods as assessed by concordance index (c-index). In addition, the top 100 genes identified by CWx were found to be associated with the Wnt signaling pathway, providing biologically relevant evidence for the value of these genes in predicting the prognosis of patients with LUAD. Further analyses of other cancer types showed that the genes identified by CWx had the highest prognostic values according to c-index. Collectively, the CWx framework will potentially be of great use to prognosis-related biomarker discoveries in a variety of diseases.},
   title={Cascaded Wx: a novel prognosis-related feature selection framework in human lung adenocarcinoma transcriptomes},
@@ -9,6 +21,7 @@
   volume={10},
   pages={662},
   year={2019},
+  pdf = {cwx.pdf},
   publisher={Frontiers}
 }
 
@@ -17,7 +30,8 @@
   title={Wx: a neural network-based feature selection algorithm for transcriptomic data},
   author={Shin, Bonggun and Park, Sungsoo and Shim, Won Sang and Choi, Yoonjung and Kang, Kilsoo and Kang, Keunsoo},
   journal={Nature Scientific Report},
-  year={2019}
+  year={2019},
+  pdf = {wx.pdf}
 }
 
 
@@ -29,7 +43,9 @@
   Title = {{Self-Attention Based Molecule Representation for Predicting Drug-Target Interaction}},
   Url = {https://www.mlforhc.org/},
   Year = {2019},
-  Bdsk-Url-1 = {https://www.mlforhc.org/}}
+  pdf = {mtdti.pdf},
+  Bdsk-Url-1 = {https://www.mlforhc.org/}
+  }
 
 
 @inproceedings{shin_19b,
@@ -58,6 +74,7 @@
   Title = {{Multimodal Ensemble Approach to Incorporate Various Types of Clinical Notes for Predicting Readmission}},
   Url = {https://www.bhi-bsn-2019.org/bhi/},
   Year = {2019},
+  pdf = {bhi.pdf},
   Bdsk-Url-1 = {https://www.bhi-bsn-2019.org/}}
 
 
@@ -85,7 +102,7 @@
 
 
 @inproceedings{shin_17b,
-  Abstract = {With the advent of word embeddings, lex- icons are no longer fully utilized for sentiment analysis although they still provide important features in the traditional setting. This paper introduces a novel approach to sentiment analysis that integrates lexicon embeddings and an attention mechanism into Convolutional Neural Networks. Our approach performs separate convolutions for word and lexicon embeddings and provides a global view of the document using attention. Our models are experimented on both the SemEval'16 Task 4 dataset and the Stanford Sentiment Treebank, and show comparative or better results against the existing state-of-the-art systems. Our analysis shows that lexicon embeddings allow to build high-performing models with much smaller word embeddings, and the attention mechanism effectively dims out noisy words for sentiment analysis.},
+  Abstract = {With the advent of word embeddings, lexicons are no longer fully utilized for sentiment analysis although they still provide important features in the traditional setting. This paper introduces a novel approach to sentiment analysis that integrates lexicon embeddings and an attention mechanism into Convolutional Neural Networks. Our approach performs separate convolutions for word and lexicon embeddings and provides a global view of the document using attention. Our models are experimented on both the SemEval'16 Task 4 dataset and the Stanford Sentiment Treebank, and show comparative or better results against the existing state-of-the-art systems. Our analysis shows that lexicon embeddings allow to build high-performing models with much smaller word embeddings, and the attention mechanism effectively dims out noisy words for sentiment analysis.},
   Address = {Copenhagen, Denmark},
   Address = {Copenhagen, Denmark},
   Author = {Shin, Bonggun and Lee, Timothy and Choi, Jinho D.},
@@ -100,6 +117,7 @@
   Url_Paper = {http://www.aclweb.org/anthology/W/W17/W17-5220.pdf},
   Url_Slides = {https://www.slideshare.net/jchoi7s/lexicon-integrated-cnn-models-with-attention-for-sentiment-analysis},
   Year = {2017},
+  pdf = {wassa.pdf},
   Bdsk-Url-1 = {https://arxiv.org/abs/1610.06272}}
 
 
@@ -119,6 +137,7 @@
   Url_Paper = {http://ieeexplore.ieee.org/document/7966408/},
   Url_Slides = {https://www.slideshare.net/jchoi7s/classification-of-radiology-reports-using-neural-attention-models},
   Year = {2017},
+  pdf = {ijcnn.pdf},
   Bdsk-Url-1 = {http://www.ijcnn.org}}
 
 
