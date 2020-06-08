@@ -2,7 +2,7 @@
 layout: about
 permalink: /
 title: <strong>Bonggun</strong> Shin
-description: <a href="">CAIO, Co-founder</a>.
+description: <a href="">CAIO, Co-founder, Deargen Inc.</a>.
 
 profile:
   align: right
