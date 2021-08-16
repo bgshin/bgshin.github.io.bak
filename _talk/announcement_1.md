@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2019-3-25 15:59:00-0400
+date: 2019-8-26 15:59:00-0400
 inline: true
 ---
 
-:sparkles: Paper accepted to [IEEE BHI'19](https://www.bhi-bsn-2019.org/bhi/).
+:speaker: Tech talk about "Deep Learning-based Drug Discovery" at Naver Clova AI Research.
