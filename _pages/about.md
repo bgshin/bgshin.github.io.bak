@@ -12,6 +12,7 @@ profile:
     <p>Atlanta, GA</p>
 
 news: true
+talk: true
 social: true
 ---
 
