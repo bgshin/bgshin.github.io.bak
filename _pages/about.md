@@ -15,4 +15,4 @@ news: true
 social: true
 ---
 
-Bonggun Shin is a chief artificial intelligence officer and a co-founder at [Deargen Inc](https://deargen.me/). He received his doctorate and master's degree of computer science in Emory University. Dr. Shin also received his master’s degree of electrical engineering in Korea Advanced Institute of Science and Technology (KAIST) and his bachelor’s degree of computer engineering in Illinois Institute of Technology (IIT). His research interest includes machine learning (ML), healthcare, and drug discovery.
+Bonggun Shin is a CEO at Deargen USA and a chief artificial intelligence officer and a co-founder at [Deargen Inc](https://deargen.me/). He received his doctorate and master's degree of computer science in Emory University. Dr. Shin also received his master’s degree of electrical engineering in Korea Advanced Institute of Science and Technology (KAIST) and his bachelor’s degree of computer engineering in Illinois Institute of Technology (IIT). His research interest includes machine learning (ML), healthcare, and drug discovery.

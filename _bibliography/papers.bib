@@ -1,5 +1,79 @@
----
----
+@inproceedings{zhang:21b,
+  abstract = {Schema matching aims to identify the correspondences among attributes of database schemas. It is frequently considered as the most challenging and decisive stage existing in many contemporary web semantics and database systems. Low quality algorithmic matchers fail to provide improvement while manually annotation consumes extensive human efforts. Further complications arise from data privacy in certain domains such as healthcare, where only schema-level matching should be used to prevent data leakage. For this problem, we propose SMAT, a new deep learning model based on state-of-the-art natural language processing techniques to obtain semantic mappings between source and target schemas using only the attribute name and description. SMAT avoids directly encoding domain knowledge about the source and target systems, which allows it to be more easily deployed across different sites. We also introduce a new benchmark dataset, OMAP, based on real-world schema-level mappings from healthcare domain. Our extensive evaluation on a variety of benchmark datasets demonstrate the potential of SMAT to help automate schema-level matching tasks.},
+  author = {Zhang, Jing and Shin, Bonggun and Choi, Jinho D. and Ho, Joyce},
+  booktitle = {Proceedings of the 25th European Conference on Advances in Databases and Information Systems},
+  date-added = {2021-05-11 12:00:33 -0400},
+  date-modified = {2021-05-11 13:18:44 -0400},
+  keywords = {emorynlp; selected},
+  series = {ADBIS'21},
+  title = {{SMAT: An Attention-based Deep Learning Solution to the Automation of Schema Matching}},
+  url = {https://adbis2021.cs.ut.ee},
+  year = {2021},
+  pdf = {zhang-adbis21.pdf},
+  Bdsk-Url-1 = {https://adbis2021.cs.ut.ee}
+}
+
+
+@inproceedings{kim:21a,
+  Abstract = {In silico prediction of drug-target interactions (DTI) is significant for drug discovery because it can largely reduce timelines and costs in the drug development process. Specifically, deep learning-based DTI approaches have been shown promising results in terms of accuracy and low cost for the prediction. However, they pay little attention to the interpretability of their prediction results and feature-level interactions between a drug and a target. In this study, we propose a novel interpretable framework that can provide reasonable cues for the interaction sites. To this end, we elaborately design a gated cross-attention mechanism that crossly attends drug and target features by constructing explicit interactions between these features. The gating function in the method enables neural models to focus on salient regions over entire sequences of drugs and proteins, and the byproduct from the function, which is the attention map, could serve as interpretable factors. The experimental results show the efficacy of the proposed method in two DTI datasets. Additionally, we show that gated cross-attention can sensitively react to the mutation, and this result could provide insights into the identification of novel drugs targeting mutant proteins.},
+  Author = {Kim, Yeachan and Shin, Bonggun},
+  Booktitle = {Proceedings of Machine Learning Research, MLHC},
+  Series = {Proceedings of Machine Learning Research, MLHC'21},
+  Title = {{An Interpretable Framework for Drug-Target Interaction
+with Gated Cross Attention}},
+  Url = {https://www.mlforhc.org/},
+  Year = {2021},
+  pdf = {kim2021a.pdf},
+  Bdsk-Url-1 = {https://www.mlforhc.org/}
+  }
+
+
+
+
+@article{Shin2021ControlledMG,
+  title={Controlled molecule generator for optimizing multiple chemical properties},
+  author={Bonggun Shin and Sungsoo Park and JinYeong Bak and Joyce C. Ho},
+  journal={Proceedings of the Conference on Health, Inference, and Learning},
+  year={2021},
+  pdf={CMG21.pdf}
+}
+
+
+@Article{v12111325,
+AUTHOR = {Choi, Yoonjung and Shin, Bonggun and Kang, Keunsoo and Park, Sungsoo and Beck, Bo Ram},
+TITLE = {Target-Centered Drug Repurposing Predictions of Human Angiotensin-Converting Enzyme 2 (ACE2) and Transmembrane Protease Serine Subtype 2 (TMPRSS2) Interacting Approved Drugs for Coronavirus Disease 2019 (COVID-19) Treatment through a Drug-Target Interaction Deep Learning Model},
+JOURNAL = {Viruses},
+VOLUME = {12},
+YEAR = {2020},
+NUMBER = {11},
+ARTICLE-NUMBER = {1325},
+URL = {https://www.mdpi.com/1999-4915/12/11/1325},
+PubMedID = {33218024},
+ISSN = {1999-4915},
+ABSTRACT = {Previously, our group predicted commercially available Food and Drug Administration (FDA) approved drugs that can inhibit each step of the replication of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) using a deep learning-based drug-target interaction model called Molecule Transformer-Drug Target Interaction (MT-DTI). Unfortunately, additional clinically significant treatment options since the approval of remdesivir are scarce. To overcome the current coronavirus disease 2019 (COVID-19) more efficiently, a treatment strategy that controls not only SARS-CoV-2 replication but also the host entry step should be considered. In this study, we used MT-DTI to predict FDA approved drugs that may have strong affinities for the angiotensin-converting enzyme 2 (ACE2) receptor and the transmembrane protease serine 2 (TMPRSS2) which are essential for viral entry to the host cell. Of the 460 drugs with Kd of less than 100 nM for the ACE2 receptor, 17 drugs overlapped with drugs that inhibit the interaction of ACE2 and SARS-CoV-2 spike reported in the NCATS OpenData portal. Among them, enalaprilat, an ACE inhibitor, showed a Kd value of 1.5 nM against the ACE2. Furthermore, three of the top 30 drugs with strong affinity prediction for the TMPRSS2 are anti-hepatitis C virus (HCV) drugs, including ombitasvir, daclatasvir, and paritaprevir. Notably, of the top 30 drugs, AT1R blocker eprosartan and neuropsychiatric drug lisuride showed similar gene expression profiles to potential TMPRSS2 inhibitors. Collectively, we suggest that drugs predicted to have strong inhibitory potencies to ACE2 and TMPRSS2 through the DTI model should be considered as potential drug repurposing candidates for COVID-19.},
+DOI = {10.3390/v12111325}
+}
+
+
+
+
+
+@article {Park35,
+  author = {Park, Sungsoo and Ko, Yoon Ho and Lee, Bora and Shin, Bonggun and Beck, Bo Ram},
+  title = {Abstract 35: Molecular optimization of phase III trial failed anticancer drugs using target affinity and toxicity-centered multiple properties reinforcement learning},
+  volume = {26},
+  number = {12 Supplement 1},
+  pages = {35--35},
+  year = {2020},
+  doi = {10.1158/1557-3265.ADVPRECMED20-35},
+  publisher = {American Association for Cancer Research},
+  abstract = {Abstracts: AACR Special Conference on Advancing Precision Medicine Drug Development: Incorporation of Real-World Data and Other Novel Strategies; January 9-12, 2020; San Diego, CADespite the potential of anticancer drugs in the early stages of drug development, many clinical trials have failed at phase III because of low efficacy and/or high toxicity profiles. To improve such issues, effective lead optimization based on machine learning (ML) is needed. Many ML-based lead optimization models have been proposed, but they are capable of optimizing only a single property of a drug; therefore, multiple models are required and would likely be significantly different from the original drug as processed by multiple models. Our contributions are as follows: 1) We devised a new deep learning architecture based on a long short-term memory on a convolutional neural network for predicting binding affinity score (AS) and absorption, distribution, metabolism, excretion, and toxicity (ADMET) prediction. 2) We adapted the Molecule Deep Q-Networks (MoleDQN) to our new reward combinations so that a single model can consider multiple properties such as quantitative estimate of drug-likeness (QED), AS, synthetic accessibility scores (SAS), and toxicity scores. 3) Binding affinity estimator and ADMET estimator are used to indicate drug efficacy and toxicities. Iniparib, brivanib, and rebimastat, which failed in phase III clinical trials, were used for this analysis, and the top two optimized candidates of each drug with an improved score were selected. Iniparib was developed as a PARP inhibitor, but QED and AS were not predicted as a potential drug in our model (QED, 0.51; SAS, 2.23; AS, 5.02). This may be related to the low efficacy reported in clinical trials. Thus, iniparib was optimized for improved QED and AS to increase efficacy. Optimized candidates OPT-INI-01 (QED, 0.85; SAS, 3.33; AS, 7.77) and OPT-INI-02 (QED, 0.83; SAS, 3.15; AS, 7.93) were qualified with QED higher than 0.8 and demonstrated AS higher than 7.0, which is equivalent to Kd \&lt; 100 nM. Brivanib (QED, 0.56; SAS, 3.42; AS, 6.13), which targets VEGFR2, failed in clinical studies with low efficacy and unexpected toxicity (heart toxicity score, hERG, 0.77). To improve the efficacy of brivanib, hERG scores were added to the optimization properties to produce less toxic molecules. BRIV-OPT-01 (QED, 0.61; SAS, 2.80; AS, 7.79, hERG, 0.45) and BRIV-OPT-02 (QED, 0.60; SAS, 3.01; AS, 7.86; hERG, 0.41) were optimized and showed less than 0.5 in hERG score with AS higher than 7.0. Rebimastat (QED, 0.26; SAS, 3.95; AS, 7.44) targeting MMPs did not show satisfactory clinical results due to skin hypersensitivity (skin toxicity score, STS, 0.74). Thus, optimization was performed with focus on the STS and AS. REB-OPT-01 (QED, 0.35; SAS, 4.48; AS, 8.44, STS, 0.49) and REB-OPT-02 (QED, 0.52; SAS, 4.33; AS, 7.80; STS, 0.53) showed less than 0.55 in STS and better overall results than that of rebimastat. In conclusion, this work may improve and accelerate drug development through ML methods that use differential weights for different properties such as efficacy and toxicity, and it may make it easily accessible and less expensive to test new drug candidates in the real world.Citation Format: Sungsoo Park, Yoon Ho Ko, Bora Lee, Bonggun Shin, Bo Ram Beck. Molecular optimization of phase III trial failed anticancer drugs using target affinity and toxicity-centered multiple properties reinforcement learning [abstract]. In: Proceedings of the AACR Special Conference on Advancing Precision Medicine Drug Development: Incorporation of Real-World Data and Other Novel Strategies; Jan 9-12, 2020; San Diego, CA. Philadelphia (PA): AACR; Clin Cancer Res 2020;26(12_Suppl_1):Abstract nr 35.},
+  issn = {1078-0432},
+  URL = {https://clincancerres.aacrjournals.org/content/26/12_Supplement_1/35},
+  eprint = {https://clincancerres.aacrjournals.org/content},
+  journal = {Clinical Cancer Research}
+}
+
 
 @article{shin_20a,
   Abstract = {The infection of a novel coronavirus found in Wuhan of China (SARS-CoV-2) is rapidly spreading, and the incidence rate is increasing worldwide. Due to the lack of effective treatment options for SARS-CoV-2, various strategies are being tested in China, including drug repurposing. In this study, we used our pre-trained deep learning-based drug-target interaction model called Molecule Transformer-Drug Target Interaction (MT-DTI) to identify commercially available drugs that could act on viral proteins of SARS-CoV-2. The result showed that atazanavir, an antiretroviral medication used to treat and prevent the human immunodeficiency virus (HIV), is the best chemical compound, showing an inhibitory potency with Kd of 94.94 nM against the SARS-CoV-2 3C-like proteinase, followed by remdesivir (113.13 nM), efavirenz (199.17 nM), ritonavir (204.05 nM), and dolutegravir (336.91 nM). Interestingly, lopinavir, ritonavir, and darunavir are all designed to target viral proteinases. However, in our prediction, they may also bind to the replication complex components of SARS-CoV-2 with an inhibitory potency with Kd < 1,000 nM. In addition, we also found that several antiviral agents, such as Kaletra (lopinavir/ritonavir), could be used for the treatment of SARS-CoV-2. Overall, we suggest that the list of antiviral drugs identified by the MT-DTI model should be considered, when establishing effective treatment strategies for SARS-CoV-2.},
